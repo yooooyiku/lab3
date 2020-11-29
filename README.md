@@ -130,3 +130,32 @@ protected void onCreate(Bundle savedInstanceState) {
 [![BrXQnU.png](https://s1.ax1x.com/2020/11/03/BrXQnU.png)](https://imgchr.com/i/BrXQnU)
 
 [![BrXKXT.png](https://s1.ax1x.com/2020/11/03/BrXKXT.png)](https://imgchr.com/i/BrXKXT)
+
+(4)
+
+```
+ActionMode.Callback callback = new ActionMode.Callback() {
+
+    @Override
+    public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return false;
+    }
+    //显示已选择n项
+    @Override
+    public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        actionMode.setTitle("已选择"+ selected_items + " 项");
+        return true;
+    }
+    @Override
+    public void onDestroyActionMode(ActionMode actionMode) {
+
+    }
+};
+```
+
+[![DgfOXR.png](https://s3.ax1x.com/2020/11/30/DgfOXR.png)](https://imgchr.com/i/DgfOXR)
